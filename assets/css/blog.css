@@ -1,0 +1,43 @@
+main{
+    display: flex;
+}
+
+.card{
+    margin: 10px;
+    width: 300px;
+    height: 180px;
+}
+header{
+    height: 5vh;
+    min-height: 90px;
+    background-color: rgb(0, 180, 0);
+    text-align: center;
+    color: rgb(100, 100, 100);
+    font-weight: bold;
+    padding: 18px;  
+}
+
+a{
+    margin: 5px;
+}
+
+main{
+    box-shadow: 2px 2px 20px gray;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cim{
+    font-size: x-large;
+    width: 400px;
+}
+
+.rovid{
+    font-size: large;
+    width: 600px;
+}
+
+.tartalom{
+    width: 67vw;
+}

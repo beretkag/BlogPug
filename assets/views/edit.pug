@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Összes Blog
+        link(rel="stylesheet", href="/assets/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css")
+        link(rel="stylesheet", href="/assets/css/blog.css")
+    body 
+        div(class="container")
+            header
+                h1 BlogPugs
+            div(class="d-flex flex-row justify-content-between")
+                div
+                    a(class="btn btn-secondary" href=`/`)
+                        i(class="bi bi-backspace")
+                div
+                    =now
+            main(class="d-flex justify-content-between")
+                form(action=`/${type}/${blog._id}`, method="post")
+                    div(class="d-flex flex-row justify-content-between")
+                        div
+                        div
+                            h1(class="text-center")
+                                input(type="text", name="title" value=`${blog.title}` placeholder="Blog címe..." class="form-control m-3 cim  ")
+                        div
+                            a(href=`/delete/${blog._id}` class="btn btn-danger")
+                                i(class="bi bi-trash-fill")
+                    h2
+                        input(type="text", name="short" value=`${blog.short}` placeholder="Röviden..." class="form-control rovid m-3")
+                    h3(class="text-justify")
+                        textarea(name="content", cols="25", rows="17" placeholder="Tartalom..." class="form-control m-3 tartalom")
+                            =blog.content
+                    div(class="d-none")
+                        input(type="datetime", name="date" value=`${now}`)
+                    div
+                        input(type="submit" class="btn btn-success m-3" value="Mentés")
+                        a(href=`/csakegy/blog/${blog._id}` class="btn btn-secondary m-3") Mégse
+
+                        
+
+                
+                
+
+        script(src="/assets/js/bootstrap.bundle.js")
+        script(src="/assets/js/bootstrap.min.js")
+        script(src="/assets/js/jquery-3.6.2.min.js")

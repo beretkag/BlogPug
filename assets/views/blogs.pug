@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Összes Blog
+        link(rel="stylesheet", href="/assets/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css")
+        link(rel="stylesheet", href="/assets/css/blog.css")
+    body 
+        div(class="container")
+            header
+                h1 BlogPugs
+            a(href="/addNew" class="btn btn-success") Új blog +
+            main(class="d-flex flex-row")
+                each blog in blogok 
+                    div(class="card")
+                        div(class="card-header")
+                            =blog.date 
+                        div(class="card-body")
+                            h5(class="card-title")
+                                =blog.title
+                            p(class="card-text")
+                                =blog.short
+                            a(class="btn btn-success" href=`/csakegy/blog/${blog._id}`)
+                                i(class="bi bi-eye-fill")
+
+        script(src="/assets/js/bootstrap.bundle.js")
+        script(src="/assets/js/bootstrap.min.js")
+        script(src="/assets/js/jquery-3.6.2.min.js")
